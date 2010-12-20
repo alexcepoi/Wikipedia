@@ -1,0 +1,12 @@
+# Ignore temporary files
+**~
+**swp
+**/Thumbs.db
+
+# Ignore user preferences
+*.suo
+**.user
+
+# Ignore builds
+Wikipedia/bin/**
+Wikipedia/obj/**
