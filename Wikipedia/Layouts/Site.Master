@@ -38,8 +38,11 @@
                         <a href="~/Account/Register.aspx" runat="server">Register</a>
                     </AnonymousTemplate>
                     <LoggedInTemplate>
-                        <asp:LoginName runat="server" />
-                        <asp:LoginStatus runat="server" LogoutAction="Refresh" LogoutText="Log Out" />
+                        <a class="username" href="~/Account/ChangePassword.aspx" runat="server">
+                            <asp:LoginName runat="server" />
+                        </a>
+                        <span class="separator">|</span>
+                        <asp:LoginStatus runat="server" LogoutAction="Refresh" LogoutText="Logout" />
                     </LoggedInTemplate>
                 </asp:LoginView>
             </div>
