@@ -1,50 +1,61 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Wikipedia.SiteMaster" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head runat="server">
     <title></title>
-    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
-    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
-    </asp:ContentPlaceHolder>
+    <link href="~/Styles/Main.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
 </head>
 <body>
     <form runat="server">
-    <div class="page">
-        <div class="header">
-            <div class="title">
-                <h1>
-                    My ASP.NET Application
-                </h1>
-            </div>
-            <div class="loginDisplay">
-                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+    <div id="sidebar">
+        <a href="~" runat="server">
+            <img runat="server" src="~/Images/logo.png" alt="Logo" />
+        </a>
+
+        <h3>Domains</h3>
+        <asp:Menu runat="server" Orientation="Vertical" IncludeStyleBlock="false" SkipLinkText="">
+            <Items>
+                <asp:MenuItem NavigateUrl="~" Text="Home" />
+            </Items>
+        </asp:Menu>
+        <h3>Administration</h3>
+
+        <h3>Miscellaneous</h3>
+        <ul>
+            <li><a href="~/About.aspx" runat="server">About</a></li>
+        </ul>
+    </div>
+    <div id="wrapper">
+        <div id="header">
+            <div id="profile">
+                <asp:LoginView runat="server" EnableViewState="false">
                     <AnonymousTemplate>
-                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> ]
+                        <a href="~/Account/Login.aspx" runat="server">Log In</a>
+                        <span class="separator">|</span>
+                        <a href="~/Account/Register.aspx" runat="server">Register</a>
                     </AnonymousTemplate>
                     <LoggedInTemplate>
-                        Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
-                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
+                        <asp:LoginName runat="server" />
+                        <asp:LoginStatus runat="server" LogoutAction="Refresh" LogoutText="Log Out" />
                     </LoggedInTemplate>
                 </asp:LoginView>
             </div>
-            <div class="clear hideSkiplink">
-                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
-                    <Items>
-                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
-                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
-                    </Items>
-                </asp:Menu>
+            <div class="clear"></div>
+            <div id="search">
+                Search
+            </div>
+            <div id="actions">
+                Edit <span class="separator">|</span> Versions
             </div>
         </div>
-        <div class="main">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        <div id="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
         </div>
-        <div class="clear">
+        <div id="footer">
         </div>
-    </div>
-    <div class="footer">
-        
     </div>
     </form>
 </body>
