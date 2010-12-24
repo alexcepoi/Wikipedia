@@ -37,6 +37,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -55,15 +58,17 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
-    <Content Include="App_Data\ASPNETDB.MDF" />
-    <Content Include="App_Data\ASPNETDB_log.ldf">
-      <DependentUpon>ASPNETDB.MDF</DependentUpon>
+    <Content Include="App_Data\Membership.mdf" />
+    <Content Include="App_Data\Membership_log.ldf">
+      <DependentUpon>Membership.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Wikipedia.mdf" />
+    <Content Include="App_Data\Wikipedia_log.ldf">
+      <DependentUpon>Wikipedia.mdf</DependentUpon>
     </Content>
     <Content Include="Images\logo.png" />
-    <Content Include="Images\pixel.png" />
     <Content Include="Styles\Main.css" />
     <Content Include="Styles\Reset.css" />
-    <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
@@ -131,8 +136,18 @@
     <Compile Include="Layouts\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="App_Data\Wikipedia_EDM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Wikipedia_EDM.edmx</DependentUpon>
+    </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EntityDeploy Include="App_Data\Wikipedia_EDM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Wikipedia_EDM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config" />
     <Content Include="Layouts\Site.Master" />
@@ -144,8 +159,8 @@
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>1109</DevelopmentServerPort>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>3000</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
