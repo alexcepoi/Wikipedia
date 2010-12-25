@@ -67,6 +67,7 @@
       <DependentUpon>Wikipedia.mdf</DependentUpon>
     </Content>
     <Content Include="Images\logo.png" />
+    <Content Include="Styles\Default.css" />
     <Content Include="Styles\Main.css" />
     <Content Include="Styles\Reset.css" />
     <Content Include="Default.aspx" />
@@ -74,7 +75,9 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -118,6 +121,8 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Data\Article.cs" />
+    <Compile Include="Data\Domain.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -136,14 +141,14 @@
     <Compile Include="Layouts\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="App_Data\Wikipedia_EDM.Designer.cs">
+    <Compile Include="Data\Wikipedia_EDM.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Wikipedia_EDM.edmx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="App_Data\Wikipedia_EDM.edmx">
+    <EntityDeploy Include="Data\Wikipedia_EDM.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Wikipedia_EDM.Designer.cs</LastGenOutput>
     </EntityDeploy>

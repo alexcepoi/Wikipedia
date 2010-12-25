@@ -2,16 +2,61 @@
     CodeBehind="Default.aspx.cs" Inherits="Wikipedia._Default" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+    <link href="Styles/Default.css" rel="stylesheet" type="text/css" />
 </asp:Content>
+
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
-    <h1>
-        Welcome to ASP.NET!
-    </h1>
-    <p>
-        To learn more about ASP.NET visit <a href="http://www.asp.net" title="ASP.NET Website">www.asp.net</a>.
-    </p>
-    <p>
-        You can also find <a href="http://go.microsoft.com/fwlink/?LinkID=152368&amp;clcid=0x409"
-            title="MSDN ASP.NET Docs">documentation on ASP.NET at MSDN</a>.
-    </p>
+    <asp:ListView ID="Domains" runat="server" DataKeyNames="Id" 
+        DataSourceID="Domains_EDS" GroupItemCount="2">
+        <EmptyDataTemplate>
+            <table>
+                <tr><td>No data was returned.</td></tr>
+            </table>
+        </EmptyDataTemplate>
+        <EmptyItemTemplate>
+            <td />
+        </EmptyItemTemplate>
+        <GroupTemplate>
+            <tr ID="itemPlaceholderContainer" runat="server">
+                <td ID="itemPlaceholder" runat="server" />
+            </tr>
+        </GroupTemplate>
+        <ItemTemplate>
+            <td>
+            <table class="domain">
+            <tr><td class="domainheader">
+                <h2><asp:Label ID="NameLabel" runat="server" Text='<%# "New in " + Eval("Name") %>' /></h2>
+            </td></tr>
+            <tr><td>
+                <asp:ListView ID="LatestArticles" runat="server" DataSource='<%# Eval("LatestArticles") %>'>
+                    <EmptyDataTemplate>
+                        <p>No articles found</p>
+                    </EmptyDataTemplate>
+                    <EmptyItemTemplate>
+                        <p>Empty Article</p>
+                    </EmptyItemTemplate>
+                    <ItemTemplate>
+                        <li><a href='<%#"~/Article.aspx?id=" + Eval("Id") %>' runat="server"><%# Eval("Name") %></a></li>
+                    </ItemTemplate>
+                    <LayoutTemplate>
+                        <ul><li id="itemPlaceholder" runat="server" /></ul>
+                    </LayoutTemplate>
+                </asp:ListView>
+                </td></tr>
+            </table>
+            </td>
+        </ItemTemplate>
+        <LayoutTemplate>
+            <table ID="groupPlaceholderContainer" runat="server">
+                <tr ID="groupPlaceholder" runat="server"></tr>
+            </table>
+        </LayoutTemplate>
+    </asp:ListView>
+    <asp:EntityDataSource ID="Domains_EDS" runat="server" AutoGenerateWhereClause="True"
+        ConnectionString="name=WikipediaEntities" DefaultContainerName="WikipediaEntities"
+        EnableFlattening="False" EntitySetName="Domains" Include="Articles.Versions">
+        <WhereParameters>
+            <asp:QueryStringParameter Name="Id" QueryStringField="Id" Type="Int32" />
+        </WhereParameters>
+    </asp:EntityDataSource>
 </asp:Content>

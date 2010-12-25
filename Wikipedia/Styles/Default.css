@@ -1,0 +1,31 @@
+﻿table {
+    width: 100%;
+}
+
+td {
+    padding: 10px;
+}
+
+.domain {
+    /* green
+    border: 1px solid #cef2e0;
+    background-color: #f5fffa;*/
+    
+    /* blue */
+    border: 1px solid #cedff2;
+    background-color: #f5faff;
+}
+
+.domainheader {
+    padding: 5px;
+}
+
+.domainheader h2 {
+    /* green
+    border: 1px solid #a3bfb1;
+    background-color: #cef2e0;*/
+    
+    /* blue */
+    border: 1px solid #a3b0bf;
+    background-color: #cedff2;
+}

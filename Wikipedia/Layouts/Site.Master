@@ -2,6 +2,7 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
 "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head runat="server">
     <title></title>
@@ -11,18 +12,24 @@
 <body>
     <form runat="server">
     <div id="sidebar">
-        <a href="~" runat="server">
-            <img runat="server" src="~/Images/logo.png" alt="Logo" />
-        </a>
-
+        <a href="~" runat="server"><img runat="server" src="~/Images/logo.png" alt="Logo" /></a>
         <h3>Domains</h3>
-        <asp:Menu runat="server" Orientation="Vertical" IncludeStyleBlock="false" SkipLinkText="">
-            <Items>
-                <asp:MenuItem NavigateUrl="~" Text="Home" />
-            </Items>
-        </asp:Menu>
+        <asp:ListView ID="Domains" runat="server" DataSourceID="Domains_EDS">
+            <ItemTemplate>
+                <li>
+                    <a runat="server" href='<%# "~/Domain.aspx?id=" + Eval("Id") %>'><%# Eval("Name") %></a>
+                </li>
+            </ItemTemplate>
+            <LayoutTemplate>
+                <ul>
+                    <li runat="server" id="itemPlaceholder" />
+                </ul>
+            </LayoutTemplate>
+        </asp:ListView>
+        <asp:EntityDataSource ID="Domains_EDS" runat="server" ConnectionString="name=WikipediaEntities"
+            DefaultContainerName="WikipediaEntities" EnableFlattening="False" EntitySetName="Domains">
+        </asp:EntityDataSource>
         <h3>Administration</h3>
-
         <h3>Miscellaneous</h3>
         <ul>
             <li><a href="~/About.aspx" runat="server">About</a></li>
@@ -47,17 +54,13 @@
                 </asp:LoginView>
             </div>
             <div class="clear"></div>
-            <div id="search">
-                Search
-            </div>
+            <div id="search">Search</div>
             <div id="actions">
                 Edit <span class="separator">|</span> Versions
             </div>
         </div>
         <div id="main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
-        </div>
-        <div id="footer">
         </div>
     </div>
     </form>
