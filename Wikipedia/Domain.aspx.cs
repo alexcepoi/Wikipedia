@@ -79,6 +79,7 @@ namespace Wikipedia
                         foreach (var art in articles)
                         {
                             DataRow row = table.NewRow();
+                            row["Id"] = art.Id;
                             row["Name"] = art.Name;
                             row["UserName"] = art.UserName;
                             row["IsProtected"] = art.IsProtected;
