@@ -2,7 +2,7 @@
     CodeBehind="Domain.aspx.cs" Inherits="Wikipedia.Domain" %>
 
 <asp:Content ID="HeaderContent" ContentPlaceHolderID="HeadContent" runat="server">
-    <link href="Styles/Main.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Domain.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">

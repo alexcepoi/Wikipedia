@@ -69,6 +69,7 @@
     <Content Include="Domain.aspx" />
     <Content Include="Images\logo.png" />
     <Content Include="Styles\Default.css" />
+    <Content Include="Styles\Domain.css" />
     <Content Include="Styles\Main.css" />
     <Content Include="Styles\Reset.css" />
     <Content Include="Default.aspx" />
