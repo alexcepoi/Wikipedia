@@ -66,6 +66,7 @@
     <Content Include="App_Data\Wikipedia_log.ldf">
       <DependentUpon>Wikipedia.mdf</DependentUpon>
     </Content>
+    <Content Include="Domain.aspx" />
     <Content Include="Images\logo.png" />
     <Content Include="Styles\Default.css" />
     <Content Include="Styles\Main.css" />
@@ -129,6 +130,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.aspx.cs">
+      <DependentUpon>Domain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Domain.aspx.designer.cs">
+      <DependentUpon>Domain.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

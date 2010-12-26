@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Layouts/Site.master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/Site.master" AutoEventWireup="true"
     CodeBehind="Default.aspx.cs" Inherits="Wikipedia._Default" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
@@ -55,8 +55,5 @@
     <asp:EntityDataSource ID="Domains_EDS" runat="server" AutoGenerateWhereClause="True"
         ConnectionString="name=WikipediaEntities" DefaultContainerName="WikipediaEntities"
         EnableFlattening="False" EntitySetName="Domains" Include="Articles.Versions">
-        <WhereParameters>
-            <asp:QueryStringParameter Name="Id" QueryStringField="Id" Type="Int32" />
-        </WhereParameters>
     </asp:EntityDataSource>
 </asp:Content>

@@ -11,9 +11,7 @@ namespace Wikipedia.Data
         {
             get
             {
-                return (from ver in this.Versions
-                        orderby ver.CreateDate
-                        select ver.Name).FirstOrDefault();
+                return Versions.OrderBy(ver => ver.CreateDate).First().Name;
             }
         }
     }

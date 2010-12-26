@@ -1,4 +1,4 @@
-﻿<%@ Page Title="About Us" Language="C#" MasterPageFile="~/Layouts/Site.master" AutoEventWireup="true"
+﻿<%@ Page Title="Wikipedia:About" Language="C#" MasterPageFile="~/Layouts/Site.master" AutoEventWireup="true"
     CodeBehind="About.aspx.cs" Inherits="Wikipedia.About" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
