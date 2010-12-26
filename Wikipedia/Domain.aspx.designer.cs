@@ -13,21 +13,12 @@ namespace Wikipedia {
     public partial class Domain {
         
         /// <summary>
-        /// Debug control.
+        /// ArticlesGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Debug;
-        
-        /// <summary>
-        /// Articles_EDS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource Articles_EDS;
+        protected global::System.Web.UI.WebControls.GridView ArticlesGridView;
     }
 }
