@@ -55,11 +55,6 @@
     <asp:EntityDataSource ID="Domains_EDS" runat="server" AutoGenerateWhereClause="True"
         ConnectionString="name=WikipediaEntities" DefaultContainerName="WikipediaEntities"
         EnableFlattening="False" EntitySetName="Domains" 
-    Include="Articles.Versions" AutoGenerateOrderByClause="True" 
-    EntityTypeFilter="" OrderBy="" Select="">
-        <OrderByParameters>
-            <asp:ControlParameter ControlID="Domains" Name="CreateDate" 
-                PropertyName="SelectedValue" Type="DateTime" />
-        </OrderByParameters>
+        Include="Articles.Versions">
     </asp:EntityDataSource>
 </asp:Content>

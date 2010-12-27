@@ -519,11 +519,15 @@ namespace Wikipedia.Data
         /// </summary>
         /// <param name="id">Initial value of the Id property.</param>
         /// <param name="content">Initial value of the Content property.</param>
-        public static Image CreateImage(global::System.Int32 id, global::System.Byte[] content)
+        /// <param name="contentType">Initial value of the ContentType property.</param>
+        /// <param name="contentLength">Initial value of the ContentLength property.</param>
+        public static Image CreateImage(global::System.Int32 id, global::System.Byte[] content, global::System.String contentType, global::System.Int32 contentLength)
         {
             Image image = new Image();
             image.Id = id;
             image.Content = content;
+            image.ContentType = contentType;
+            image.ContentLength = contentLength;
             return image;
         }
 
@@ -580,6 +584,54 @@ namespace Wikipedia.Data
         private global::System.Byte[] _Content;
         partial void OnContentChanging(global::System.Byte[] value);
         partial void OnContentChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String ContentType
+        {
+            get
+            {
+                return _ContentType;
+            }
+            set
+            {
+                OnContentTypeChanging(value);
+                ReportPropertyChanging("ContentType");
+                _ContentType = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ContentType");
+                OnContentTypeChanged();
+            }
+        }
+        private global::System.String _ContentType;
+        partial void OnContentTypeChanging(global::System.String value);
+        partial void OnContentTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 ContentLength
+        {
+            get
+            {
+                return _ContentLength;
+            }
+            set
+            {
+                OnContentLengthChanging(value);
+                ReportPropertyChanging("ContentLength");
+                _ContentLength = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ContentLength");
+                OnContentLengthChanged();
+            }
+        }
+        private global::System.Int32 _ContentLength;
+        partial void OnContentLengthChanging(global::System.Int32 value);
+        partial void OnContentLengthChanged();
 
         #endregion
     

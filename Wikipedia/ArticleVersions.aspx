@@ -27,8 +27,7 @@
     <asp:EntityDataSource runat="server" ID="Versions_EDS" 
         AutoGenerateWhereClause="True" ConnectionString="name=WikipediaEntities" 
         DefaultContainerName="WikipediaEntities" EnableDelete="True" 
-        EnableFlattening="False" EntitySetName="Versions" EntityTypeFilter="" Select="" 
-        Where="">
+        EnableFlattening="False" EntitySetName="Versions" OnDeleted="VersionDeleted">
         <WhereParameters>
             <asp:QueryStringParameter Name="ArticleId" QueryStringField="id" Type="Int32" />
         </WhereParameters>

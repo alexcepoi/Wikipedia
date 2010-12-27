@@ -65,6 +65,7 @@ namespace Wikipedia
                         NewLink.HRef = "ArticleNew.aspx?id=" + id;
 
                         var articles = eds.Articles.Where(art => art.DomainId == id);
+                        var image = eds.Images.Where(img => img.Id == id);
 
                         DataTable table = new DataTable();
                         table.Columns.Add("Id");

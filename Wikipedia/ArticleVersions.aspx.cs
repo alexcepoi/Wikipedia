@@ -11,7 +11,21 @@ namespace Wikipedia
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+        }
 
+        public void VersionDeleted(object sender, EntityDataSourceChangedEventArgs e)
+        {
+            using (var eds = new Data.WikipediaEntities())
+            {
+                Data.Version ver = e.Entity as Data.Version;
+                var art = eds.Articles.Where(article => article.Id == ver.ArticleId).First();
+
+                if (art.Versions.Count == 0)
+                {
+                    eds.Articles.DeleteObject(art);
+                    eds.SaveChanges();
+                }
+            }
         }
     }
 }

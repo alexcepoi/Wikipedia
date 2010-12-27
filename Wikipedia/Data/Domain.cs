@@ -11,7 +11,7 @@ namespace Wikipedia.Data
         {
             get
             {
-                return Articles.OrderBy(art => art.CreateDate).Take(5);
+                return Articles.OrderByDescending(art => art.CreateDate).Take(5);
             }
         }
     }
