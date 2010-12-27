@@ -61,6 +61,9 @@ namespace Wikipedia
 
                     if (int.TryParse(stringid, out id))
                     {
+                        NewAction.Visible = true;
+                        NewLink.HRef = "ArticleNew.aspx?id=" + id;
+
                         var articles = eds.Articles.Where(art => art.DomainId == id);
 
                         DataTable table = new DataTable();

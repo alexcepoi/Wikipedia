@@ -2,7 +2,13 @@
     CodeBehind="Domain.aspx.cs" Inherits="Wikipedia.Domain" %>
 
 <asp:Content ID="HeaderContent" ContentPlaceHolderID="HeadContent" runat="server">
-    <link href="Styles/Domain.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/GridView.css" rel="stylesheet" type="text/css" />
+</asp:Content>
+
+<asp:Content ID="ActionsContent" ContentPlaceHolderID="ActionsBar" runat="server">
+    <span runat="server" id="NewAction" visible="false">
+        <a runat="server" id="NewLink" href="">New</a>
+    </span>
 </asp:Content>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">

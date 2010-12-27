@@ -72,11 +72,13 @@
     </Content>
     <Content Include="Article.aspx" />
     <Content Include="ArticleEdit.aspx" />
+    <Content Include="ArticleNew.aspx" />
+    <Content Include="ArticleVersions.aspx" />
     <Content Include="Dependencies\Textile.dll" />
     <Content Include="Domain.aspx" />
     <Content Include="Images\logo.png" />
     <Content Include="Styles\Default.css" />
-    <Content Include="Styles\Domain.css" />
+    <Content Include="Styles\GridView.css" />
     <Content Include="Styles\Main.css" />
     <Content Include="Styles\Reset.css" />
     <Content Include="Default.aspx" />
@@ -143,6 +145,20 @@
     </Compile>
     <Compile Include="ArticleEdit.aspx.designer.cs">
       <DependentUpon>ArticleEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArticleNew.aspx.cs">
+      <DependentUpon>ArticleNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArticleNew.aspx.designer.cs">
+      <DependentUpon>ArticleNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArticleVersions.aspx.cs">
+      <DependentUpon>ArticleVersions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArticleVersions.aspx.designer.cs">
+      <DependentUpon>ArticleVersions.aspx</DependentUpon>
     </Compile>
     <Compile Include="Data\Article.cs" />
     <Compile Include="Data\Domain.cs" />
