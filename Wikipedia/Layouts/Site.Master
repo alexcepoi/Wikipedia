@@ -56,7 +56,7 @@
             <div class="clear"></div>
             <div id="search">Search</div>
             <div id="actions">
-                Edit <span class="separator">|</span> Versions
+                <asp:ContentPlaceHolder ID="ActionsBar" runat="server" />
             </div>
         </div>
         <div id="main">

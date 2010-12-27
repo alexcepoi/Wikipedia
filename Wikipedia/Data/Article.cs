@@ -10,9 +10,12 @@ namespace Wikipedia.Data
         public string Name
         {
             get
-            {
-                return Versions.OrderByDescending(ver => ver.CreateDate).First().Name;
-            }
+            { return Versions.OrderByDescending(ver => ver.CreateDate).First().Name; }
+        }
+        public string Content
+        {
+            get
+            { return Versions.OrderByDescending(ver => ver.CreateDate).First().Content; }
         }
     }
 }

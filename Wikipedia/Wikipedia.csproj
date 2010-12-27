@@ -51,6 +51,10 @@
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Textile, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\Textile.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
@@ -66,6 +70,9 @@
     <Content Include="App_Data\Wikipedia_log.ldf">
       <DependentUpon>Wikipedia.mdf</DependentUpon>
     </Content>
+    <Content Include="Article.aspx" />
+    <Content Include="ArticleEdit.aspx" />
+    <Content Include="Dependencies\Textile.dll" />
     <Content Include="Domain.aspx" />
     <Content Include="Images\logo.png" />
     <Content Include="Styles\Default.css" />
@@ -122,6 +129,20 @@
     </Compile>
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Article.aspx.cs">
+      <DependentUpon>Article.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Article.aspx.designer.cs">
+      <DependentUpon>Article.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArticleEdit.aspx.cs">
+      <DependentUpon>ArticleEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArticleEdit.aspx.designer.cs">
+      <DependentUpon>ArticleEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Data\Article.cs" />
     <Compile Include="Data\Domain.cs" />

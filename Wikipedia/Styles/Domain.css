@@ -4,6 +4,7 @@
 }
 
 td, th {
+    border: none;
     text-align: center;
     padding: 3px 10px;
 }
