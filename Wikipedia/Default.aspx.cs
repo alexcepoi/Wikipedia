@@ -11,7 +11,6 @@ namespace Wikipedia
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // FIXME: should display last 5 results
         }
     }
 }

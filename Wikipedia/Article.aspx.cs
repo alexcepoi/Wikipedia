@@ -28,7 +28,7 @@ namespace Wikipedia
                         EditAction.Visible = true;
                         EditLink.HRef = "~/ArticleEdit.aspx?id=" + article.Id;
                     }
-                    if (article.UserName == User.Identity.Name)
+                    if (article.UserName == User.Identity.Name || User.IsInRole("Editor"))
                     {
                         ProtectAction.Visible = true;
                         if (article.IsProtected) { ProtectLink.Text = "UnProtect"; }
