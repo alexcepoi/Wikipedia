@@ -28,9 +28,11 @@ namespace Wikipedia
             string username = chk.Attributes["Name"];
 
             if (chk.Checked)
-            { Roles.AddUserToRole(username, rolename); }
+                Roles.AddUserToRole(username, rolename);
             else
-            { Roles.RemoveUserFromRole(username, rolename); }
+                if (rolename != "Admin" || Roles.GetUsersInRole("Admin").Count() > 1)
+                    Roles.RemoveUserFromRole(username, rolename);
+                else chk.Checked = true;
         }
 
         public void ItemDataBound(object sender, ListViewItemEventArgs e)
