@@ -12,6 +12,7 @@
 </asp:Content>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <h1 runat="server" id="DomainName" visible="false"></h1>
     <asp:GridView runat="server" ID="ArticlesGridView" CellPadding="4" GridLines="None" ForeColor="#333333"
         AutoGenerateColumns="False" AllowSorting="true" OnSorting="GV_Sorting">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
@@ -28,6 +29,7 @@
             <asp:BoundField DataField="CreateDate" HeaderText="CreateDate" 
                 SortExpression="CreateDate" />
         </Columns>
+        <EmptyDataTemplate>No Articles Found.</EmptyDataTemplate>
         <FooterStyle BackColor="#5D7B9D" ForeColor="White" Font-Bold="True" />
         <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
         <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />

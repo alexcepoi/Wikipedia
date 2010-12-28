@@ -31,6 +31,15 @@ namespace Wikipedia {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor NewLink;
         
         /// <summary>
+        /// DomainName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DomainName;
+        
+        /// <summary>
         /// ArticlesGridView control.
         /// </summary>
         /// <remarks>

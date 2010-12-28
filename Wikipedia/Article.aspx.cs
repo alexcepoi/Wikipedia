@@ -55,7 +55,7 @@ namespace Wikipedia
                 {
                     var article = eds.Articles.Where(art => art.Id == id).First();
 
-                    if (article.UserName == User.Identity.Name)
+                    if (article.UserName == User.Identity.Name || User.IsInRole("Editor"))
                     {
                         if (article.IsProtected)
                         {

@@ -10,9 +10,7 @@ namespace Wikipedia.Data
         public dynamic LatestArticles
         {
             get
-            {
-                return Articles.OrderByDescending(art => art.CreateDate).Take(5);
-            }
+            { return Articles.OrderByDescending(art => art.CreateDate).Take(5); }
         }
     }
 }

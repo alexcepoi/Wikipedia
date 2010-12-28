@@ -1,4 +1,5 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Wikipedia.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" EnableViewState="true"
+CodeBehind="Site.master.cs" Inherits="Wikipedia.SiteMaster" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
 "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
@@ -58,7 +59,10 @@
                 </asp:LoginView>
             </div>
             <div class="clear"></div>
-            <div id="search">Search</div>
+            <div id="search">
+                <asp:TextBox runat="server" ID="SearchBar" />
+                <asp:Button runat="server" ID="SearchButton" PostBackUrl="~/Search.aspx" />
+            </div>
             <div id="actions">
                 <asp:ContentPlaceHolder ID="ActionsBar" runat="server" />
             </div>

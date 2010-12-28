@@ -9,6 +9,12 @@ namespace Wikipedia
 {
     public partial class SiteMaster : System.Web.UI.MasterPage
     {
+        public string SearchText
+        {
+            get { return SearchBar.Text; }
+            set { SearchBar.Text = value; }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.User.IsInRole("Admin"))

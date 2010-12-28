@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/Site.Master" AutoEventWireup="true"
+﻿<%@ Page Title="Wikipedia:Users" Language="C#" MasterPageFile="~/Layouts/Site.Master" AutoEventWireup="true"
     CodeBehind="Users.aspx.cs" Inherits="Wikipedia.Users" %>
 
 <asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContent" runat="server">
@@ -6,6 +6,7 @@
 </asp:Content>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <h1>User Management</h1>
     <asp:ListView runat="server" ID="UserList" OnItemDataBound="ItemDataBound">
         <ItemTemplate>
             <tr>
