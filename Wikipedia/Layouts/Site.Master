@@ -60,8 +60,10 @@ CodeBehind="Site.master.cs" Inherits="Wikipedia.SiteMaster" %>
             </div>
             <div class="clear"></div>
             <div id="search">
+            <asp:Panel runat="server" DefaultButton="SearchButton">
                 <asp:TextBox runat="server" ID="SearchBar" />
-                <asp:Button runat="server" ID="SearchButton" PostBackUrl="~/Search.aspx" />
+                <asp:Button runat="server" ID="SearchButton" OnClick="SearchButton_Click" />
+            </asp:Panel>
             </div>
             <div id="actions">
                 <asp:ContentPlaceHolder ID="ActionsBar" runat="server" />

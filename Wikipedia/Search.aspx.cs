@@ -51,14 +51,7 @@ namespace Wikipedia
                 }
             }
 
-            string searchtext = "";
-            if (PreviousPage != null && PreviousPage.IsCrossPagePostBack)
-            {
-                searchtext = (PreviousPage.Master as SiteMaster).SearchText;
-                (Master as SiteMaster).SearchText = searchtext;
-            }
-            else if (IsPostBack)
-                searchtext = (Master as SiteMaster).SearchText;
+            string searchtext = Request.QueryString["q"];
 
             var view = new DataView (ViewState["articles"] as DataTable);
             view.RowFilter = String.Format("Name LIKE '%{0}%'", searchtext);

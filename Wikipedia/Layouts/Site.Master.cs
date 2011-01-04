@@ -9,18 +9,20 @@ namespace Wikipedia
 {
     public partial class SiteMaster : System.Web.UI.MasterPage
     {
-        public string SearchText
-        {
-            get { return SearchBar.Text; }
-            set { SearchBar.Text = value; }
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.User.IsInRole("Admin"))
             {
                 admin.Visible = false;
             }
+
+            if (!IsPostBack)
+                SearchBar.Text = Request.QueryString["q"];
+        }
+
+        protected void SearchButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Search.aspx?q=" + SearchBar.Text);
         }
     }
 }
