@@ -219,3 +219,7 @@ div.accountInfo
 .username {
     color: #ba0000;
 }
+
+.error {
+    color: red;
+}
